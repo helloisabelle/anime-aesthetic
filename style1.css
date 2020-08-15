@@ -1,0 +1,170 @@
+@font-face {
+  font-family: "g";
+  src: url("arilon.ttf");
+}
+
+.center{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  text-align: center;
+}
+
+
+body{
+  font-family: g;
+  margin: 0;
+  width: 100%;
+  background: linear-gradient(-45deg, #b5d1ff, #d1b5ff, #b5ffc4);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  text-shadow: 1px 1px 4px white;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+.res{
+  text-align: center;
+  padding:10%;
+}
+
+#rank{
+  width: 50%;
+  padding: 2%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+
+.palette-color{
+  padding: 1%;
+  width: 90%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+#p{
+  width: 90%; margin-left: auto; margin-right: auto; display: block;
+}
+
+.i{
+  display: block; margin-left: auto; margin-right: auto; width: 90%;
+}
+
+
+#header {
+  padding: 15%;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  font-size: 35px;
+  color: black;
+  text-shadow: 2px 2px white;
+}
+
+.is-invalid {
+  color: red;
+}
+
+small{
+  margin-bottom: 3%;
+}
+
+h2{
+  text-align: center;
+}
+
+h4{
+  text-align: center;
+}
+
+h3{
+   animation: move 10s ease infinite;
+}
+
+@keyframes move {
+  0% {
+    color: darkBlue;
+    text-shadow: 2px 2px pink;
+  }
+  50% {
+    color: darkRed;
+    text-shadow: 5px 5px 10px purple;
+  }
+  100% {
+    color: darkBlue;
+    text-shadow: 2px 2px white;
+  }
+
+}
+
+#contact, #search{
+  margin: 5%;
+}
+
+p{
+  text-align: left;
+}
+
+ul{
+  text-align: left;
+}
+
+img{
+  padding: 1%;
+}
+
+.col-md{
+  padding: 2%;
+  text-align: center;
+}
+
+.col-md-8{
+  padding: 2%;
+  text-align: center;
+}
+
+.page-footer{
+  background-color: #e68888;
+  font-size: 20px;
+}
+
+.navbar{
+  background-color: #e68888;
+  box-shadow: 1px 1px 10px #ffa6c5;
+}
+
+.navbar-brand{
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+
+#header p{
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+}
+
+
+@media (min-width: 768px){
+   img{
+    padding: 3%;
+   }
+
+   .row2{
+    flex-direction: row-reverse;
+   }
+}
