@@ -15,9 +15,9 @@ body{
   font-family: g;
   margin: 0;
   width: 100%;
-  background: linear-gradient(-45deg, #b5d1ff, #d1b5ff, #b5ffc4);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background-image: url(https://wallpapercave.com/wp/wp1951584.jpg);
+  background-size: cover;
+  animation: gradient 100s ease infinite;
   text-shadow: 1px 1px 4px white;
 }
 
@@ -91,26 +91,6 @@ h4{
   text-align: center;
 }
 
-h3{
-   animation: move 10s ease infinite;
-}
-
-@keyframes move {
-  0% {
-    color: darkBlue;
-    text-shadow: 2px 2px pink;
-  }
-  50% {
-    color: darkRed;
-    text-shadow: 5px 5px 10px purple;
-  }
-  100% {
-    color: darkBlue;
-    text-shadow: 2px 2px white;
-  }
-
-}
-
 #contact, #search{
   margin: 5%;
 }
@@ -138,12 +118,12 @@ img{
 }
 
 .page-footer{
-  background-color: #e68888;
+  background-color: #678879;
   font-size: 20px;
 }
 
 .navbar{
-  background-color: #e68888;
+  background-color: #678879;
   box-shadow: 1px 1px 10px #ffa6c5;
 }
 

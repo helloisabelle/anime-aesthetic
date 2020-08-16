@@ -1,9 +1,9 @@
 <?php
 
-$host = "303.itpwebdev.com";
-$user = "isabelln_db_user";
-$password = "uscItp2020";
-$db = "isabelln_project_db";
+$host = "localhost";
+$user = "u680557347_isabelle_user";
+$password = "Abc12345";
+$db = "u680557347_anime_db";
 
 $mysqli = new mysqli($host, $user, $password, $db);
 
@@ -41,7 +41,6 @@ if ($mysqli->connect_errno){
 
 		<div id = "search">
 			<section class="mb-4">
-
 			    <h4 style = "font-size: 45px">Select an anime</h4>
 			            <form id="search-form" name="search-form" action = "images.php" method = "POST" >
 			                <div class="row">
