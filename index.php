@@ -42,7 +42,7 @@
 							<div class="row">
 								<select style = "font-size: 30px" name="anime_id" id="anime" class="form-control">
 									<?php
-										$sql = "SELECT * FROM animes;";
+										$sql = "SELECT * FROM anime;";
 										$results = $mysqli->query($sql);
 
 										if (!$results){

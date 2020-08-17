@@ -11,13 +11,13 @@
 	}
 
 	$sql = "SELECT url
-		FROM wallpapers
-		JOIN animes
-			ON wallpapers.id = animes.id
+		FROM wallpaper
+		JOIN anime
+			ON wallpaper.anime_id = anime.id
 		WHERE 1 = 1";
 
 	if (isset($_POST["anime_id"]) && !empty($_POST["anime_id"])){
-		$sql = $sql. " AND wallpapers.anime_id = ". $_POST["anime_id"];
+		$sql = $sql. " AND wallpaper.anime_id = ". $_POST["anime_id"];
 	}
 
 	$results = $mysqli->query($sql);
