@@ -1,37 +1,30 @@
 <?php
+	$host = "localhost";
+	$user = "u680557347_isabelle_user";
+	$password = "Abc12345";
+	$db = "u680557347_anime_db";
+	$mysqli = new mysqli($host, $user, $password, $db);
 
-$host = "303.itpwebdev.com";
-$user = "isabelln_db_user";
-$password = "uscItp2020";
-$db = "isabelln_project_db";
+	if ($mysqli->connect_errno){
+		echo $mysqli->connect_error;
+		exit();
+	}
 
-$mysqli = new mysqli($host, $user, $password, $db);
+	$sql = "SELECT url
+		FROM wallpapers
+		JOIN animes
+			ON wallpapers.anime_id = animes.id
+		WHERE 1 = 1";
 
-if ($mysqli->connect_errno){
-	echo $mysqli->connect_error;
-	exit();
-}
+	if (isset($_POST["anime_id"]) && !empty($_POST["anime_id"])){
+		$sql = $sql. " AND wallpapers.anime_id = ". $_POST["anime_id"];
+	}
 
-$sql = "SELECT url
-	FROM wallpapers
-	JOIN animes
-		ON wallpapers.anime_id = animes.id
-	JOIN tones
-		ON wallpapers.tone_id = tones.id
-	WHERE 1 = 1";
-
-if (isset($_POST["anime_id"]) && !empty($_POST["anime_id"])){
-	$sql = $sql. " AND wallpapers.anime_id = ". $_POST["anime_id"];
-}
-
-
-$results = $mysqli->query($sql);
-
-if (!$results){
-	echo $mysqli->error;
-	exit();
-}
-
+	$results = $mysqli->query($sql);
+	if (!$results){
+		echo $mysqli->error;
+		exit();
+	}
 ?>
 
 <!DOCTYPE html>
@@ -49,7 +42,7 @@ if (!$results){
 	<body>
 
 		<nav class="navbar navbar-expand-md navbar-light">
-		  <a class="navbar-brand" href="home.php">Anime Aesthetic</a>
+		  <a class="navbar-brand" href="index.php">Anime Aesthetic</a>
 		</nav>
 
 		<?php 
@@ -63,11 +56,7 @@ if (!$results){
 		<br/>
 
 		<h2 style = "font-size: 60px"> Here is your palette. </h2>
-
-
 		<div id = "palette" class = "palette-color"></div>
-
-
 
 		<footer class="page-footer font-small">
 		  <div class="footer-copyright text-center py-3">© 2020 Anime Aesthetic</div>
@@ -77,36 +66,27 @@ if (!$results){
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-		<script src = "main.js"></script>
 		<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
 
 		<script>
-
 			const colorThief = new ColorThief();
 		    const im = document.querySelector('img');
-
 			var palette = colorThief.getPalette(im, 6, 1);
 
-			console.log(palette);
-
-		for(var i = 0; i < palette.length; i++) {
-			var x = 'rgb(' + palette[i][0] + ', '+ palette[i][1] + ', ' + palette[i][2] + ')';
+			for(var i = 0; i < palette.length; i++) {
+				var x = 'rgb(' + palette[i][0] + ', '+ palette[i][1] + ', ' + palette[i][2] + ')';
 				var s = $("<div></div>");
-			        s.addClass("palette-color");
-			        s.text("R: " + palette[i][0] + ' G: '+ palette[i][1] + ' B: ' + palette[i][2]);
-			        s.css("background-color", x);
-			        s.css("text-align", "center");
-			        s.css("text-shadow", "1px 1px 2px black");
-			        s.css("font-size", "30px");
-			        s.css("color", "#e3e1e1");
-			        s.css("font-family", "courier");
-
-		 	 $('#palette').append(s);
-
-		}
-
+					s.addClass("palette-color");
+					s.text("R: " + palette[i][0] + ' G: '+ palette[i][1] + ' B: ' + palette[i][2]);
+					s.css("background-color", x);
+					s.css("text-align", "center");
+					s.css("text-shadow", "1px 1px 2px black");
+					s.css("font-size", "30px");
+					s.css("color", "#e3e1e1");
+					s.css("font-family", "courier");
+				$('#palette').append(s);
+			}
 		</script>
-
 	</body>
 </html>
