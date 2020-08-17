@@ -13,7 +13,7 @@
 	$sql = "SELECT url
 		FROM wallpaper
 		JOIN anime
-			ON wallpapers.anime_id = anime.id
+			ON wallpaper.anime_id = anime.id
 		WHERE 1 = 1";
 
 	if (isset($_POST["anime_id"]) && !empty($_POST["anime_id"])){
