@@ -40,7 +40,7 @@
     <title>Images</title>
 
 </head>
-<body>
+<body style="background-size: 130%">
 
 	<nav class="navbar navbar-expand-md navbar-light">
 	  <a class="navbar-brand" href="index.php">Anime Aesthetic</a>

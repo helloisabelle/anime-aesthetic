@@ -15,7 +15,7 @@ body{
   font-family: g;
   margin: 0;
   width: 100%;
-  background-image: url(https://wallpapercave.com/wp/wp1951584.jpg);
+  background-image: url(wall.jpg);
   background-size: cover;
   animation: gradient 100s ease infinite;
   text-shadow: 1px 1px 4px white;
@@ -124,7 +124,7 @@ img{
 
 .navbar{
   background-color: #678879;
-  box-shadow: 1px 1px 10px #ffa6c5;
+  box-shadow: 1px 1px 20px #a7a7a7;
 }
 
 .navbar-brand{
